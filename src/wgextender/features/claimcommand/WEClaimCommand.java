@@ -12,7 +12,7 @@ import com.sk89q.worldedit.regions.Region;
 import com.sk89q.worldguard.LocalPlayer;
 import com.sk89q.worldguard.bukkit.BukkitWorldConfiguration;
 import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
-import com.sk89q.worldguard.bukkit.commands.task.RegionAdder;
+import com.sk89q.worldguard.commands.task.RegionAdder;
 import com.sk89q.worldguard.internal.permission.RegionPermissionModel;
 import com.sk89q.worldguard.protection.ApplicableRegionSet;
 import com.sk89q.worldguard.protection.managers.RegionManager;
@@ -78,7 +78,7 @@ public class WEClaimCommand {
 			throw new CommandException("Вы можете приватить только внутри своих регионов.");
 		}
 
-		RegionAdder task = new RegionAdder(WorldGuardPlugin.inst(), manager, region);
+		RegionAdder task = new RegionAdder(manager, region);
 		task.setLocatorPolicy(UserLocatorPolicy.UUID_ONLY);
 		task.setOwnersInput(new String[] { player.getName() });
 		try {
