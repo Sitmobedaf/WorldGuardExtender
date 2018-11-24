@@ -32,7 +32,7 @@ public class WEWand {
 	protected static Material cachedWandMaterial;
 
 	protected static Material getWandMaterial() {
-		String weWandMaterialName = WEUtils.getWorldEditPlugin().getLocalConfiguration().wandItem.toUpperCase();
+		String weWandMaterialName = WEUtils.getWorldEditPlugin().getLocalConfiguration().wandItem.getName().toUpperCase();
 		if (cachedWandMaterial == null || !cachedWandMaterial.toString().equals(weWandMaterialName)) {
 			cachedWandMaterial = Material.getMaterial(weWandMaterialName.split(":")[1]);
 		}
